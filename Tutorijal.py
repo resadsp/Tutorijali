@@ -171,7 +171,151 @@ print(p>1 and p>2 and p>10) #vratice false jer nisu ispunjeni svi zadati uslovi
 print(p>10 or p>20 or p>100 or p>2) #vratice true jer ispunjen jedan uslov, jedan ili vise
 print(not(p>3 and p<10)) #obrunti rezultat. Vraca false ako je true i vraca true ako je false
 print(not(p>10 or p>20 or p>100 or p>2)) #iako je uslov true vratice false zbog kljucne rijeci not
- 
+print("-------------------------------------------------")
+#IF PETLJA
+a = 100
+b = 2000
+if a>b:
+    print("a je vece od b")
+else: 
+    print("b je vece od a")
+a = 12
+b = 12
+if a>b:
+    print("a je vece od b")
+elif a==b:
+    print("a je jednako b")
+else:
+    print("b je vece od a")
+c = 233
+d = 233 
+print("C") if c>d else print("c i d") if c==d else print("B")
+f = 1222
+g = 1344
+h= 999999
+print("F je vece od G") if f>g else print("f i g su jednaki") if f==g else print("G je vece od F")
+if g>a and g>b and g>c and g>h: #moraju da su ispunjeni svi uslovi, AND-I
+    print("g je najvece")
+else:
+    print("G nije najvece")
+if g>a or g>b or g>c or g>h: #treba da je ispunjen samo jedan uslov a moze i vise njih, OR-ILI
+    print("g je najvece")
+else:
+    print("G nije najvece")
+a = 13
+b = 14
+if not a>b:
+    print("a nije vece od b")
+if not b>a:
+    print("b je vece od a")
+if b>a:
+    pass
+print("nesto")
+x = 14
+if x>10 and x<21:
+    print("x je vece od 10 a manje od 21")
+    if x>12 and x<16:
+        print("x je vece od 12 a manje od 16")
+    if x==15:
+        print("x je jednako 15")
+    elif x==14:
+        print("x je jedanko 14")
+    else:
+        print("nedefinisano")
+i = 1
+s = 0
+while i<=10:
+    s = s+i
+    i+=1
+print(s) 
 
+i = 1
+while i<10:
+    print(i)
+    if i == 6:
+        break #prekida while petlju iako je uslov tacan
+    i+=1
+j = 0
+while j<7:
+    j+=1
+    if j == 3:  #preskoci ovu iteraciju, kada dodjes da je j = 3 preskoci itraciju i idi na j = 4
+        continue
+    print(j)
 
+i = 0 
+while i < 50:
+    i +=1
+    if i == 40:
+        continue
+    print(i)
 
+import random
+a = random.randrange(1,20)
+print("Broj koji smo dobili nasumicno je", a)
+i = 0
+while i < 20:
+    i +=1
+    if i == a:
+        continue
+    print(i)
+else:
+    print("ovde se else uvek izvrsva. kad zavrsi sa while doci ce do else")
+lista = ["jedan", "dva", "tri"]
+tupl = ("jedan", "dva", "tri")
+sets = {"jedan", "dva", "tri"}
+for x in lista:
+    print(x)
+for y in tupl:
+    print(y)
+for z in sets:
+    print(z)
+for x in lista:
+    for a in x:
+     print(a)
+for x in "recenica":
+    print(x)
+lista = ["jedan", "dva", "tri"]
+for x in lista:
+    if x == "dva": #ovo je slucaj kada ne zelimo da stampamo onaj element koji nam pravi break
+        break
+    print(x)
+lista = ["jedan", "dva", "tri"]
+for x in lista:
+    print(x)
+    if x == "dva": #ovo je slucaj kada  zelimo da stampamo onaj element koji nam pravi brak
+        break
+lista = ["jedan", "dva", "tri"]
+for x in lista:
+    if x == "dva": #preskacemo iteraciju kada je x == 2
+        continue
+    print(x)
+
+for x in range(10): #koristi se samo za brojeve
+    print(x) #stampa brojeve od 0 do 10 (ne ukljucuje krajnju vrednost, tj broj 10) stampa 0 1 2 3 4 5 6 7 8 9
+for x in range(2, 11): #stampa broojeve od 2 do 11, vrednost 2 je ukljucena a vrednost 11 nije. korak je 1 po automatizmu
+    print(x)
+    if x == 6: #prekid kod broja 6, u ovom slucaju stampa i broj 6
+        break
+for x in range(3, 33, 4): #stampa brojeve od 3 do 33 (nije ukljuceno), korak nije 1 nego 4 
+    print(x)
+
+for i in range(10):
+    print(i)
+else:
+    print("KONACNO ZAVRSENA STAMPA") #stampa poruku kada se petlja zavrsi. naredba else se nece izvrsiti ako se for petlja prekine sa naredbom break
+
+for x in range(6):
+  if x == 3: break
+  print(x)
+else:
+  print("Finally finished!") #nece se izvrsiti jer je for petlja prekinuta sa naredbom break
+
+for x in range(12): #for petlja ne moze biti prazna ali ako budu prazne unosi se pass izjava da bi se izbeglo dobijanje greske
+    pass
+
+boje = ["crvena", "zelena", "zuta"]
+voce = ["malina", "jabuka", "dunja"]
+
+for x in boje:
+    for y in voce:
+        print(x,y)
